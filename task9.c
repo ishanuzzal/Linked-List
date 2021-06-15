@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Nodelist{
+
+    int a;
+    struct Nodelist *pre;
+    struct Nodelist *next;
+}nodes;
+
+nodes *head=NULL;
+
+void input(){
+    nodes *temp, *node;
+    int i,n,num;
+    printf("How many nodes you want to insert\n");
+    scanf("%d",&n);
+    for(i=1; i<=n; i++){
+        printf("Enter %d node: ",i);
+        scanf("%d",&num);
+        //allocating memory
+        node=(nodes *)malloc(sizeof(nodes));
+        node->a=num;
+        node->pre=NULL;
+        node->next=NULL;
+        //inserting first node address to head
+        if(head==NULL){
+            head=node;
+            temp=head;
+        }
+        else{
+           temp->next=node;
+           node->pre=temp;
+           temp=node;
+
+        }
+    }
+}
+void read(){
+    nodes *temp;
+    temp=head;
+
+    while(temp!=NULL){
+        printf("%d ",temp->a);
+        temp=temp->next;
+    }
+}
+
+void insertLastnode(){
+    nodes *temp,*node;
+    int num;
+    temp=head;
+    //allocating memory for last node
+    node = (nodes *)malloc(sizeof(nodes));
+    printf("\nEnter data for last node\n");
+    scanf("%d",&num);
+    node->a=num;
+    node->pre=NULL;
+    node->next=NULL;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=node;
+    node->pre=temp;
+}
+
+
+
+
+int main()
+{
+    input();
+    printf("Nodelist before inserting any nodes\n");
+    read();
+    insertLastnode();
+    printf("\nNodelist after inserting last nodes\n");
+    read();
+
+
+
+    return 0;
+}
+
