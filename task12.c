@@ -52,7 +52,7 @@ void deleteLastNode(){
     if(head!=NULL){
         temp=head;
     }
-    //deleting first node of a doubly linked list
+    //deleting last node of a doubly linked list
     while(temp->next!=NULL){
         temp=temp->next;
     }
