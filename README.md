@@ -16,3 +16,9 @@ task7 : Creating a doubly linked list and displaying it.
 task8 : inserting a new node in 1st place of a doubly linked list.
 
 task9 : inserting a new node in last place of a doubly linked list.
+
+task10 : inserting a new node to user defined index of a doubly linked list
+
+task11 : deleting first node of a doubly linked list
+
+task12 : deleting last node of a doubly linked list
