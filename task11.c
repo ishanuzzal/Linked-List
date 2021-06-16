@@ -53,6 +53,9 @@ void deleteFirstNode(){
     if(head!=NULL){
         temp=head;
     }
+    else{
+        return;
+    }
     //deleting first node of a doubly linked list
     head=temp->next;
     head->pre=NULL;
